@@ -11,8 +11,10 @@ function Seal({ text }: { text: string }) {
           <path id="seal-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
         </defs>
         <circle cx="100" cy="100" r="98" className="fill-background" />
-        <text className="fill-foreground font-sans text-[15px] tracking-[0.32em]">
-          <textPath href="#seal-circle">{text + text.slice(0, 0)}</textPath>
+        <text className="fill-foreground font-sans text-[13px] font-semibold">
+          <textPath href="#seal-circle" textLength="486" lengthAdjust="spacing">
+            {text}
+          </textPath>
         </text>
       </svg>
       <span className="absolute inset-0 flex items-center justify-center font-serif text-3xl italic text-primary">N</span>
