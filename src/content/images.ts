@@ -14,16 +14,16 @@ import pedicure from "@/assets/pedicure-burgundy.jpg";
 import epilation from "@/assets/epilation-soft-skin.jpg";
 
 export const images = {
-  brows1: brows1.url,
-  brows2: brows2.url,
-  brows1Before: brows1Before.url,
-  brows1After: brows1After.url,
-  brows2Before: brows2Before.url,
-  brows2After: brows2After.url,
-  nailsLavender: nailsLavender.url,
-  nailsHearts: nailsHearts.url,
-  nailsFrench: nailsFrench.url,
-  nailsBurgundy: nailsBurgundy.url,
+  brows1,
+  brows2,
+  brows1Before,
+  brows1After,
+  brows2Before,
+  brows2After,
+  nailsLavender,
+  nailsHearts,
+  nailsFrench,
+  nailsBurgundy,
   pedicure,
   epilation,
 };
