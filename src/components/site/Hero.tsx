@@ -90,7 +90,7 @@ export function Hero() {
             />
           </div>
           <div
-            className="animate-unveil shape-pill absolute -bottom-6 left-0 aspect-[3/5] w-[38%] border-[6px] border-background shadow-soft"
+            className="animate-unveil shape-pill absolute -bottom-6 left-0 aspect-[3/5] w-[38%] border-[6px] border-background"
             style={{ animationDelay: "500ms", transform: `translateY(${-offset * 0.08}px)` }}
           >
             <img src={images.nailsBurgundy} alt="Ongles courts vernis bordeaux" className="h-full w-full object-cover" />
