@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Site copy, prices and photos live in `src/content/` (site.ts holds FR + PT-BR strings side by side; images.ts maps every photo) — edit content there, never inline in components.
+- Language is client state (`src/lib/i18n.tsx`), French by default; keep both languages in sync when adding text.
+- Booking goes only through WhatsApp links built in `src/lib/whatsapp.ts` (covered by its test); there is no backend booking.

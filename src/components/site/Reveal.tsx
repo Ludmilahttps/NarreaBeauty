@@ -20,7 +20,7 @@ export function Reveal({ as: Tag = "div", className, children, delay = 0, mask =
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setVisible(true);
           io.disconnect();
         }
@@ -31,11 +31,23 @@ export function Reveal({ as: Tag = "div", className, children, delay = 0, mask =
     return () => io.disconnect();
   }, []);
 
+  // Masked reveals clip an inner layer: a clip-path on the observed element itself
+  // would hide it from the IntersectionObserver.
+  if (mask) {
+    return (
+      <Tag ref={ref} className={className} style={style}>
+        <div data-visible={visible} className="reveal-mask h-full w-full" style={{ transitionDelay: `${delay}ms` }}>
+          {children}
+        </div>
+      </Tag>
+    );
+  }
+
   return (
     <Tag
       ref={ref}
       data-visible={visible}
-      className={cn(mask ? "reveal-mask" : "reveal", className)}
+      className={cn("reveal", className)}
       style={{ transitionDelay: `${delay}ms`, ...style }}
     >
       {children}

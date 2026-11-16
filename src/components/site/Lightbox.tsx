@@ -39,6 +39,7 @@ export function Lightbox({ items, index, onChange, labels }: Props) {
 
   if (index === null) return null;
   const item = items[index];
+  if (!item) return null;
 
   return (
     <div
@@ -47,10 +48,11 @@ export function Lightbox({ items, index, onChange, labels }: Props) {
       aria-modal="true"
       aria-label={item.alt}
       onClick={() => onChange(null)}
-      onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+      onTouchStart={(e) => (touchX.current = e.touches[0]?.clientX ?? null)}
       onTouchEnd={(e) => {
-        if (touchX.current === null) return;
-        const dx = e.changedTouches[0].clientX - touchX.current;
+        const touch = e.changedTouches[0];
+        if (touchX.current === null || !touch) return;
+        const dx = touch.clientX - touchX.current;
         if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
         touchX.current = null;
       }}
