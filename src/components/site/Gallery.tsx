@@ -105,7 +105,7 @@ export function Gallery() {
                 beforeLabel={g.before}
                 afterLabel={g.after}
                 hint={g.beforeAfterHint}
-                alt={gallery[1].alt[lang]}
+                alt={gallery[1]?.alt[lang] ?? g.beforeAfterTitle}
               />
             </Reveal>
             <Reveal delay={150}>
@@ -115,7 +115,7 @@ export function Gallery() {
                 beforeLabel={g.before}
                 afterLabel={g.after}
                 hint={g.beforeAfterHint}
-                alt={gallery[4].alt[lang]}
+                alt={gallery[4]?.alt[lang] ?? g.beforeAfterTitle}
               />
             </Reveal>
           </div>
