@@ -2,9 +2,9 @@ import { useState } from "react";
 import { MoveHorizontal } from "lucide-react";
 
 type Props = {
-  /** A single photo with "before" stacked on top and "after" below it. */
-  src: string;
-  /** Aspect ratio of ONE half of the photo (width / height). */
+  before: string;
+  after: string;
+  /** Shared aspect ratio of both photos (width / height). */
   ratio: string;
   beforeLabel: string;
   afterLabel: string;
@@ -12,17 +12,20 @@ type Props = {
   alt: string;
 };
 
-export function BeforeAfter({ src, ratio, beforeLabel, afterLabel, hint, alt }: Props) {
+export function BeforeAfter({ before, after, ratio, beforeLabel, afterLabel, hint, alt }: Props) {
   const [pos, setPos] = useState(50);
-  const bg = { backgroundImage: `url(${src})`, backgroundSize: "100% 200%" } as const;
 
   return (
     <figure className="select-none">
       <div className="relative overflow-hidden rounded-2xl shadow-soft" style={{ aspectRatio: ratio }} role="img" aria-label={alt}>
-        <div className="absolute inset-0" style={{ ...bg, backgroundPosition: "center top" }} />
-        <div
-          className="absolute inset-0"
-          style={{ ...bg, backgroundPosition: "center bottom", clipPath: `inset(0 0 0 ${pos}%)` }}
+        <img src={before} alt="" draggable={false} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <img
+          src={after}
+          alt=""
+          draggable={false}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ clipPath: `inset(0 0 0 ${pos}%)` }}
+          loading="lazy"
         />
         <span className="text-eyebrow absolute left-3 top-3 rounded-full bg-background/85 px-3 py-1.5 text-foreground">
           {beforeLabel}

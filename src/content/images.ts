@@ -1,6 +1,11 @@
 // All site photos in one place — swap a file here to change it everywhere.
 import brows1 from "@/assets/photos/brows-1.jpg.asset.json";
 import brows2 from "@/assets/photos/brows-2.jpg.asset.json";
+// Before/after pairs: each "before" was realigned onto its "after" (same angle, height and crop).
+import brows1Before from "@/assets/photos/brows-1-before.jpg.asset.json";
+import brows1After from "@/assets/photos/brows-1-after.jpg.asset.json";
+import brows2Before from "@/assets/photos/brows-2-before.jpg.asset.json";
+import brows2After from "@/assets/photos/brows-2-after.jpg.asset.json";
 import nailsLavender from "@/assets/photos/nails-lavender.jpg.asset.json";
 import nailsHearts from "@/assets/photos/nails-hearts.jpg.asset.json";
 import nailsFrench from "@/assets/photos/nails-french.jpg.asset.json";
@@ -11,6 +16,10 @@ import epilation from "@/assets/epilation-soft-skin.jpg";
 export const images = {
   brows1: brows1.url,
   brows2: brows2.url,
+  brows1Before: brows1Before.url,
+  brows1After: brows1After.url,
+  brows2Before: brows2Before.url,
+  brows2After: brows2After.url,
   nailsLavender: nailsLavender.url,
   nailsHearts: nailsHearts.url,
   nailsFrench: nailsFrench.url,
