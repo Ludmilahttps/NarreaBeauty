@@ -100,8 +100,9 @@ export function Gallery() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-8">
             <Reveal>
               <BeforeAfter
-                src={images.brows1}
-                ratio="1086 / 683"
+                before={images.brows1Before}
+                after={images.brows1After}
+                ratio="1039 / 585"
                 beforeLabel={g.before}
                 afterLabel={g.after}
                 hint={g.beforeAfterHint}
@@ -110,8 +111,9 @@ export function Gallery() {
             </Reveal>
             <Reveal delay={150}>
               <BeforeAfter
-                src={images.brows2}
-                ratio="1440 / 720"
+                before={images.brows2Before}
+                after={images.brows2After}
+                ratio="1440 / 541"
                 beforeLabel={g.before}
                 afterLabel={g.after}
                 hint={g.beforeAfterHint}

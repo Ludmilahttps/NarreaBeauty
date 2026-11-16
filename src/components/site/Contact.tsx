@@ -70,11 +70,11 @@ export function Contact() {
           </Reveal>
         </div>
 
-        <Reveal mask className="shape-arch min-h-[420px] shadow-soft lg:col-span-6 lg:col-start-7">
+        <Reveal className="min-h-[420px] overflow-hidden rounded-2xl border border-border shadow-soft lg:col-span-6 lg:col-start-7">
           <iframe
             title={c.mapTitle}
             src={contact.mapEmbed}
-            className="map-warm h-full min-h-[420px] w-full border-0"
+            className="h-full min-h-[420px] w-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

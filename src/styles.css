@@ -299,10 +299,6 @@
   animation: unveil 1.4s var(--ease-atelier) both;
 }
 
-/* Beige map */
-@utility map-warm {
-  filter: grayscale(1) sepia(0.35) contrast(0.92) brightness(1.02);
-}
 
 @media (prefers-reduced-motion: reduce) {
   html {
