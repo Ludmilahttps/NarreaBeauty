@@ -20,7 +20,7 @@ export function Services() {
   );
 
   const activeCat = hovered ?? (filter === "all" ? "offres" : filter);
-  const catById = Object.fromEntries(categories.map((c) => [c.id, c]));
+  const catById = Object.fromEntries(categories.map((c) => [c.id, c])) as Record<CategoryId, (typeof categories)[number]>;
 
   return (
     <section id="prestations" className="grain relative bg-card/50 py-24 md:py-36">
